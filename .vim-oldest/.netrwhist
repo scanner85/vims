@@ -1,0 +1,4 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_1='/Applications/AMPPS/www/odybo.dev/DemoBundle/EventListener'
+let g:netrw_dirhist_2='/Applications/AMPPS/www/white-queen.dev/src/Radius/MpBundle'

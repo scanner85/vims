@@ -1,0 +1,9 @@
+set encoding=utf8
+set wrapscan
+set number
+set backspace=start,indent,eol
+set t_Co=256
+sy on
+colorscheme wombat256mod
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+

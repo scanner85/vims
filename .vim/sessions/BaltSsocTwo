@@ -1,0 +1,493 @@
+let SessionLoad = 1
+if &cp | set nocp | endif
+let s:cpo_save=&cpo
+set cpo&vim
+inoremap <D-BS> 
+inoremap <M-BS> 
+inoremap <M-Down> }
+inoremap <D-Down> <C-End>
+inoremap <M-Up> {
+inoremap <D-Up> <C-Home>
+noremap! <M-Right> <C-Right>
+noremap! <D-Right> <End>
+noremap! <M-Left> <C-Left>
+noremap! <D-Left> <Home>
+inoremap <silent> <Plug>NERDCommenterInInsert  <BS>:call NERDComment(0, "insert")
+inoremap <Plug>(EmmetAnchorizeSummary) =emmet#anchorizeURL(1)
+inoremap <Plug>(EmmetAnchorizeURL) =emmet#anchorizeURL(0)
+inoremap <Plug>(EmmetRemoveTag) =emmet#removeTag()
+inoremap <Plug>(EmmetSplitJoinTag) :call emmet#splitJoinTag()
+inoremap <Plug>(EmmetToggleComment) =emmet#toggleComment()
+inoremap <Plug>(EmmetImageSize) =emmet#imageSize()
+inoremap <Plug>(EmmetMovePrev) :call emmet#moveNextPrev(1)
+inoremap <Plug>(EmmetMoveNext) :call emmet#moveNextPrev(0)
+inoremap <Plug>(EmmetBalanceTagOutward) :call emmet#balanceTag(-1)
+inoremap <Plug>(EmmetBalanceTagInward) :call emmet#balanceTag(1)
+inoremap <Plug>(EmmetExpandWord) =emmet#expandAbbr(1,"")
+inoremap <Plug>(EmmetExpandAbbr) =emmet#expandAbbr(0,"")<Right>
+noremap <silent>  :bprev
+noremap <silent>  :bnext
+vmap c <Plug>(EmmetCodePretty)
+vmap m <Plug>(EmmetMergeLines)
+nmap A <Plug>(EmmetAnchorizeSummary)
+nmap a <Plug>(EmmetAnchorizeURL)
+nmap k <Plug>(EmmetRemoveTag)
+nmap j <Plug>(EmmetSplitJoinTag)
+nmap / <Plug>(EmmetToggleComment)
+nmap i <Plug>(EmmetImageSize)
+nmap N <Plug>(EmmetMovePrev)
+nmap n <Plug>(EmmetMoveNext)
+vmap D <Plug>(EmmetBalanceTagOutward)
+nmap D <Plug>(EmmetBalanceTagOutward)
+vmap d <Plug>(EmmetBalanceTagInward)
+nmap d <Plug>(EmmetBalanceTagInward)
+nmap ; <Plug>(EmmetExpandWord)
+vmap , <Plug>(EmmetExpandAbbr)
+nmap , <Plug>(EmmetExpandAbbr)
+nmap ,ca <Plug>NERDCommenterAltDelims
+vmap ,cA <Plug>NERDCommenterAppend
+nmap ,cA <Plug>NERDCommenterAppend
+vmap ,c$ <Plug>NERDCommenterToEOL
+nmap ,c$ <Plug>NERDCommenterToEOL
+vmap ,cu <Plug>NERDCommenterUncomment
+nmap ,cu <Plug>NERDCommenterUncomment
+vmap ,cn <Plug>NERDCommenterNest
+nmap ,cn <Plug>NERDCommenterNest
+vmap ,cb <Plug>NERDCommenterAlignBoth
+nmap ,cb <Plug>NERDCommenterAlignBoth
+vmap ,cl <Plug>NERDCommenterAlignLeft
+nmap ,cl <Plug>NERDCommenterAlignLeft
+vmap ,cy <Plug>NERDCommenterYank
+nmap ,cy <Plug>NERDCommenterYank
+vmap ,ci <Plug>NERDCommenterInvert
+nmap ,ci <Plug>NERDCommenterInvert
+vmap ,cs <Plug>NERDCommenterSexy
+nmap ,cs <Plug>NERDCommenterSexy
+vmap ,cm <Plug>NERDCommenterMinimal
+nmap ,cm <Plug>NERDCommenterMinimal
+vmap ,c  <Plug>NERDCommenterToggle
+nmap ,c  <Plug>NERDCommenterToggle
+vmap ,cc <Plug>NERDCommenterComment
+nmap ,cc <Plug>NERDCommenterComment
+nmap ,s :set list!
+map ,? :Helptags
+map ,L :set invnumber
+map ,P :! php -q %
+map ,p :! php -l %
+map ,R :retab
+map ,U :g/^$/d
+map ,T :%s/\s\+$//
+map ,c "+y
+map ,v "+gP
+map ,ct :! /opt/local/bin/ctags -R *
+nmap <silent> ,es :so $MYVIMRC
+nmap <silent> ,ev :e $MYVIMRC
+map ,et :tabe =expand("%:p:h") . "/" 
+map ,ee :e =expand("%:p:h") . "/" 
+nnoremap ,ww 
+nnoremap ,ws s
+nnoremap ,wv vl
+nnoremap ,wo o
+nnoremap ,k k
+nnoremap ,j j
+nnoremap ,l l
+nnoremap ,h h
+nnoremap ,gd :Gdiff
+nnoremap ,gg :Git 
+nnoremap ,gR :Gread
+nnoremap ,gp :Ggrep 
+nnoremap ,gm :Gmove 
+nnoremap ,gb :Gblame
+nnoremap ,gl :Glog
+nnoremap ,gr :Gremove
+nnoremap ,gs :Gstatus
+nnoremap <silent> ,Q c
+nnoremap <silent> ,q :Bclose
+noremap <silent> ,y :TagbarToggle       " Display panel with y (or ,y)
+noremap <silent> ,n :NERDTreeToggle
+noremap ,A jcl
+noremap ,a :Ack 
+nnoremap ,b :nohlsearch
+xmap S <Plug>VSurround
+smap S :s//g<Left><Left>
+nmap S :%s//g<Left><Left>
+vmap [% [%m'gv``
+vmap ]% ]%m'gv``
+vmap a% [%v]%
+nmap cs <Plug>Csurround
+nmap ds <Plug>Dsurround
+nmap gx <Plug>NetrwBrowseX
+xmap gS <Plug>VgSurround
+xmap s <Plug>Vsurround
+nmap ySS <Plug>YSsurround
+nmap ySs <Plug>YSsurround
+nmap yss <Plug>Yssurround
+nmap yS <Plug>YSurround
+nmap ys <Plug>Ysurround
+map <D-t> :CommandT
+noremap <M-Down> }
+noremap <D-Down> <C-End>
+noremap <M-Up> {
+noremap <D-Up> <C-Home>
+noremap <M-Right> <C-Right>
+noremap <D-Right> <End>
+noremap <M-Left> <C-Left>
+noremap <D-Left> <Home>
+nnoremap <silent> <Plug>NetrwBrowseX :call netrw#NetrwBrowseX(expand("<cWORD>"),0)
+nmap <silent> <Plug>NERDCommenterAppend :call NERDComment(0, "append")
+nnoremap <silent> <Plug>NERDCommenterToEOL :call NERDComment(0, "toEOL")
+vnoremap <silent> <Plug>NERDCommenterUncomment :call NERDComment(1, "uncomment")
+nnoremap <silent> <Plug>NERDCommenterUncomment :call NERDComment(0, "uncomment")
+vnoremap <silent> <Plug>NERDCommenterNest :call NERDComment(1, "nested")
+nnoremap <silent> <Plug>NERDCommenterNest :call NERDComment(0, "nested")
+vnoremap <silent> <Plug>NERDCommenterAlignBoth :call NERDComment(1, "alignBoth")
+nnoremap <silent> <Plug>NERDCommenterAlignBoth :call NERDComment(0, "alignBoth")
+vnoremap <silent> <Plug>NERDCommenterAlignLeft :call NERDComment(1, "alignLeft")
+nnoremap <silent> <Plug>NERDCommenterAlignLeft :call NERDComment(0, "alignLeft")
+vmap <silent> <Plug>NERDCommenterYank :call NERDComment(1, "yank")
+nmap <silent> <Plug>NERDCommenterYank :call NERDComment(0, "yank")
+vnoremap <silent> <Plug>NERDCommenterInvert :call NERDComment(1, "invert")
+nnoremap <silent> <Plug>NERDCommenterInvert :call NERDComment(0, "invert")
+vnoremap <silent> <Plug>NERDCommenterSexy :call NERDComment(1, "sexy")
+nnoremap <silent> <Plug>NERDCommenterSexy :call NERDComment(0, "sexy")
+vnoremap <silent> <Plug>NERDCommenterMinimal :call NERDComment(1, "minimal")
+nnoremap <silent> <Plug>NERDCommenterMinimal :call NERDComment(0, "minimal")
+vnoremap <silent> <Plug>NERDCommenterToggle :call NERDComment(1, "toggle")
+nnoremap <silent> <Plug>NERDCommenterToggle :call NERDComment(0, "toggle")
+vnoremap <silent> <Plug>NERDCommenterComment :call NERDComment(1, "norm")
+nnoremap <silent> <Plug>NERDCommenterComment :call NERDComment(0, "norm")
+vnoremap <Plug>(EmmetCodePretty) :call emmet#codePretty()
+vnoremap <Plug>(EmmetMergeLines) :call emmet#mergeLines()
+nnoremap <Plug>(EmmetAnchorizeSummary) :call emmet#anchorizeURL(1)
+nnoremap <Plug>(EmmetAnchorizeURL) :call emmet#anchorizeURL(0)
+nnoremap <Plug>(EmmetRemoveTag) :call emmet#removeTag()
+nnoremap <Plug>(EmmetSplitJoinTag) :call emmet#splitJoinTag()
+nnoremap <Plug>(EmmetToggleComment) :call emmet#toggleComment()
+nnoremap <Plug>(EmmetImageSize) :call emmet#imageSize()
+nnoremap <Plug>(EmmetMovePrev) :call emmet#moveNextPrev(1)
+nnoremap <Plug>(EmmetMoveNext) :call emmet#moveNextPrev(0)
+vnoremap <Plug>(EmmetBalanceTagOutward) :call emmet#balanceTag(-2)
+nnoremap <Plug>(EmmetBalanceTagOutward) :call emmet#balanceTag(-1)
+vnoremap <Plug>(EmmetBalanceTagInward) :call emmet#balanceTag(2)
+nnoremap <Plug>(EmmetBalanceTagInward) :call emmet#balanceTag(1)
+nnoremap <Plug>(EmmetExpandWord) :call emmet#expandAbbr(1,"")
+vnoremap <Plug>(EmmetExpandAbbr) :call emmet#expandAbbr(2,"")
+nnoremap <Plug>(EmmetExpandAbbr) :call emmet#expandAbbr(3,"")
+map <SwipeRight> :bnext
+map <SwipeLeft> :bprev
+noremap <silent> <C-Right> :bnext
+noremap <silent> <C-Left> :bprev
+vmap <BS> "-d
+imap S <Plug>ISurround
+imap s <Plug>Isurround
+imap  <Plug>Isurround
+imap A <Plug>(EmmetAnchorizeSummary)
+imap a <Plug>(EmmetAnchorizeURL)
+imap k <Plug>(EmmetRemoveTag)
+imap j <Plug>(EmmetSplitJoinTag)
+imap / <Plug>(EmmetToggleComment)
+imap i <Plug>(EmmetImageSize)
+imap N <Plug>(EmmetMovePrev)
+imap n <Plug>(EmmetMoveNext)
+imap D <Plug>(EmmetBalanceTagOutward)
+imap d <Plug>(EmmetBalanceTagInward)
+imap ; <Plug>(EmmetExpandWord)
+imap , <Plug>(EmmetExpandAbbr)
+cmap w!! %!sudo tee > /dev/null %
+let &cpo=s:cpo_save
+unlet s:cpo_save
+set noantialias
+set autoindent
+set background=dark
+set backspace=indent,eol,start
+set balloonexpr=SyntasticBalloonsExprNotifier()
+set fileencodings=ucs-bom,utf-8,default,latin1
+set guifont=Monaco:h16
+set guioptions=egmt
+set guitablabel=%M%t
+set helplang=da
+set hidden
+set history=500
+set hlsearch
+set ignorecase
+set incsearch
+set langmenu=none
+set listchars=tab:▸\ ,trail:·,extends:❯,precedes:❮,nbsp:×,eol:¬
+set mouse=a
+set pastetoggle=<F2>
+set printexpr=system('open\ -a\ Preview\ '.v:fname_in)\ +\ v:shell_error
+set ruler
+set runtimepath=~/.vim,~/.vim/bundle/ack,~/.vim/bundle/bclose,~/.vim/bundle/buftabs,~/.vim/bundle/colorschemes,~/.vim/bundle/command-t,~/.vim/bundle/emmet-vim,~/.vim/bundle/html5.vim,~/.vim/bundle/matchit,~/.vim/bundle/nerdcommenter,~/.vim/bundle/NERD_tree,~/.vim/bundle/phpcomplete,~/.vim/bundle/rust,~/.vim/bundle/sessionman,~/.vim/bundle/surround,~/.vim/bundle/syntastic,~/.vim/bundle/tagbar,~/.vim/bundle/tlib_vim,~/.vim/bundle/vim-addon-mw-utils,~/.vim/bundle/vim-coffee-script,~/.vim/bundle/vim-fugitive,~/.vim/bundle/vim-less,~/.vim/bundle/vim-powerline,~/.vim/bundle/vim-twig,~/.vim/bundle/vundle,/Applications/MacPorts/MacVim.app/Contents/Resources/vim/vimfiles,/Applications/MacPorts/MacVim.app/Contents/Resources/vim/runtime,/Applications/MacPorts/MacVim.app/Contents/Resources/vim/vimfiles/after,~/.vim/bundle/rust/after,~/.vim/after
+set shiftwidth=4
+set smartcase
+set tabstop=4
+set termencoding=utf-8
+set viminfo='1000,f1,:1000,/1000
+set visualbell
+set wildignore=.svn,CVS,.git,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,node_modules/*
+let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
+let v:this_session=expand("<sfile>:p")
+silent only
+cd ~/
+if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
+  let s:wipebuf = bufnr('%')
+endif
+set shortmess=aoO
+badd +0 apa4/baltssoc.dev/src/Acme/AdminBundle/Resources/views/layout.html.twig
+silent! argdel *
+edit apa4/baltssoc.dev/src/Acme/AdminBundle/Resources/views/layout.html.twig
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 31 + 83) / 167)
+exe 'vert 2resize ' . ((&columns * 135 + 83) / 167)
+argglobal
+enew
+file NERD_tree_1
+let s:cpo_save=&cpo
+set cpo&vim
+noremap <buffer>  <Nop>
+noremap <buffer>  <Nop>
+noremap <buffer> <C-Right> <Nop>
+noremap <buffer> <C-Left> <Nop>
+let &cpo=s:cpo_save
+unlet s:cpo_save
+setlocal keymap=
+setlocal noarabic
+setlocal autoindent
+setlocal balloonexpr=
+setlocal nobinary
+setlocal bufhidden=
+setlocal nobuflisted
+setlocal buftype=nofile
+setlocal nocindent
+setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
+setlocal commentstring=/*%s*/
+setlocal complete=.,w,b,u,t,i
+setlocal concealcursor=
+setlocal conceallevel=0
+setlocal completefunc=
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+set cursorline
+setlocal cursorline
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal noexpandtab
+if &filetype != 'nerdtree'
+setlocal filetype=nerdtree
+endif
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=tcq
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal grepprg=
+setlocal iminsert=2
+setlocal imsearch=2
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=
+setlocal indentkeys=0{,0},:,0#,!^F,o,O,e
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal nolist
+setlocal nomacmeta
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal modeline
+setlocal nomodifiable
+setlocal nrformats=octal,hex
+set number
+setlocal nonumber
+setlocal numberwidth=4
+setlocal omnifunc=
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal shiftwidth=4
+setlocal noshortname
+setlocal nosmartindent
+setlocal softtabstop=0
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=%{exists('b:NERDTreeRoot')?b:NERDTreeRoot.path.str():''}
+setlocal suffixesadd=
+setlocal noswapfile
+setlocal synmaxcol=3000
+if &syntax != 'nerdtree'
+setlocal syntax=nerdtree
+endif
+setlocal tabstop=4
+setlocal tags=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal nowinfixheight
+setlocal winfixwidth
+setlocal nowrap
+setlocal wrapmargin=0
+wincmd w
+argglobal
+setlocal keymap=
+setlocal noarabic
+setlocal autoindent
+setlocal balloonexpr=
+setlocal nobinary
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal cindent
+setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
+setlocal cinoptions=j1,J1
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=s:<!--,m:\ \ \ \ ,e:-->
+setlocal commentstring=<!--%s-->
+setlocal complete=.,w,b,u,t,i
+setlocal concealcursor=
+setlocal conceallevel=0
+setlocal completefunc=
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+set cursorline
+setlocal cursorline
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal noexpandtab
+if &filetype != 'html.twig'
+setlocal filetype=html.twig
+endif
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=tcq
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal grepprg=
+setlocal iminsert=2
+setlocal imsearch=2
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=HtmlIndentGet(v:lnum)
+setlocal indentkeys=o,O,*<Return>,<>>,{,}
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255,-
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal nolist
+setlocal nomacmeta
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:],<:>
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=octal,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=htmlcomplete#CompleteTags
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal shiftwidth=4
+setlocal noshortname
+setlocal nosmartindent
+setlocal softtabstop=0
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=
+setlocal suffixesadd=
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'html.twig'
+setlocal syntax=html.twig
+endif
+setlocal tabstop=4
+setlocal tags=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+silent! normal! zE
+let s:l = 38 - ((37 * winheight(0) + 19) / 38)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+38
+normal! 018|
+wincmd w
+2wincmd w
+exe 'vert 1resize ' . ((&columns * 31 + 83) / 167)
+exe 'vert 2resize ' . ((&columns * 135 + 83) / 167)
+tabnext 1
+if exists('s:wipebuf')
+  silent exe 'bwipe ' . s:wipebuf
+endif
+unlet! s:wipebuf
+set winheight=1 winwidth=20 shortmess=filnxtToO
+let s:sx = expand("<sfile>:p:r")."x.vim"
+if file_readable(s:sx)
+  exe "source " . fnameescape(s:sx)
+endif
+let &so = s:so_save | let &siso = s:siso_save
+doautoall SessionLoadPost
+unlet SessionLoad
+" vim: set ft=vim :
